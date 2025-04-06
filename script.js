@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const ul = document.createElement("ul");
 			ul.style.listStyle = "none";
 			ul.style.padding = "0";
+			ul.style.marginBottom = "20px"; // Add space before contact link
 
 			h2s.forEach((h2, index) => {
 				const id = `section-${index}`;
@@ -24,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
 				li.style.marginBottom = "10px";
 
 				const a = document.createElement("a");
-				a.href = `#${id}`;
+				a.href = `#${contact}`;
 				a.textContent = `📌 ${h2.textContent}`;
 
-				// New modern style for links
+				// Style for navigation links
 				a.style.display = "inline-block";
 				a.style.padding = "10px 15px";
 				a.style.background = "#2c3e50";
@@ -46,6 +47,40 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 
 			section.appendChild(ul);
+
+			// Add contact link container
+			const contactDiv = document.createElement("div");
+			contactDiv.style.marginTop = "20px";
+			contactDiv.style.paddingTop = "20px";
+			contactDiv.style.borderTop = "1px solid #34495e";
+
+			// Create contact link
+			const contactLink = document.createElement("a");
+			contactLink.href = "#contact"; // Or your actual contact page/section
+			contactLink.textContent = "📧 Contact Us";
+
+			// Style for contact link (different color to distinguish)
+			contactLink.style.display = "inline-block";
+			contactLink.style.padding = "10px 15px";
+			contactLink.style.background = "#16a085";
+			contactLink.style.color = "#ecf0f1";
+			contactLink.style.borderRadius = "8px";
+			contactLink.style.textDecoration = "none";
+			contactLink.style.fontWeight = "bold";
+			contactLink.style.transition = "background 0.3s ease";
+
+			// Hover effect for contact link
+			contactLink.addEventListener(
+				"mouseover",
+				() => (contactLink.style.background = "#1abc9c")
+			);
+			contactLink.addEventListener(
+				"mouseout",
+				() => (contactLink.style.background = "#16a085")
+			);
+
+			contactDiv.appendChild(contactLink);
+			section.appendChild(contactDiv);
 			listDiv.appendChild(section);
 		} else {
 			listDiv.innerHTML = "";
