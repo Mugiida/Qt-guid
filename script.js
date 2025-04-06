@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const button = document.querySelector(".btn");
+	const button = document.querySelector(".burger-menu");
 	const listDiv = document.getElementById("h2-list");
 
 	button.addEventListener("click", () => {
