@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const ul = document.createElement("ul");
 			ul.style.listStyle = "none";
 			ul.style.padding = "0";
-			ul.style.marginBottom = "20px"; // Add space before contact link
+			ul.style.marginBottom = "20px";
 
 			h2s.forEach((h2, index) => {
 				const id = `section-${index}`;
@@ -25,10 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
 				li.style.marginBottom = "10px";
 
 				const a = document.createElement("a");
-				a.href = `#${contact}`;
+				a.href = `#${id}`; // 🔥 Fixed: Link to the section ID
 				a.textContent = `📌 ${h2.textContent}`;
 
-				// Style for navigation links
 				a.style.display = "inline-block";
 				a.style.padding = "10px 15px";
 				a.style.background = "#2c3e50";
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				a.style.fontWeight = "bold";
 				a.style.transition = "background 0.3s ease";
 
-				// Hover effect
 				a.addEventListener("mouseover", () => (a.style.background = "#34495e"));
 				a.addEventListener("mouseout", () => (a.style.background = "#2c3e50"));
 
@@ -48,18 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			section.appendChild(ul);
 
-			// Add contact link container
 			const contactDiv = document.createElement("div");
 			contactDiv.style.marginTop = "20px";
 			contactDiv.style.paddingTop = "20px";
 			contactDiv.style.borderTop = "1px solid #34495e";
 
-			// Create contact link
 			const contactLink = document.createElement("a");
-			contactLink.href = "#contact"; // Or your actual contact page/section
+			contactLink.href = "#contact";
 			contactLink.textContent = "📧 Contact Us";
 
-			// Style for contact link (different color to distinguish)
 			contactLink.style.display = "inline-block";
 			contactLink.style.padding = "10px 15px";
 			contactLink.style.background = "#16a085";
@@ -69,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			contactLink.style.fontWeight = "bold";
 			contactLink.style.transition = "background 0.3s ease";
 
-			// Hover effect for contact link
 			contactLink.addEventListener(
 				"mouseover",
 				() => (contactLink.style.background = "#1abc9c")
